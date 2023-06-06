@@ -1,4 +1,4 @@
-import { KeyboardEvent, useState } from 'react'
+import { KeyboardEvent, useEffect, useState } from 'react'
 import { Search } from 'lucide-react'
 
 type SearchProps = {
@@ -7,12 +7,21 @@ type SearchProps = {
 
 export default function SearchBar({ getUserInfos }: SearchProps) {
   const [inputValue, setInputValue] = useState<string>('')
+  const [disabledButton, setDisabledButton] = useState<boolean>(true)
 
   function handleKeyDown(e: KeyboardEvent) {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && inputValue.length > 0) {
       getUserInfos(inputValue)
     }
   }
+
+  useEffect(() => {
+    if (inputValue.length > 0) {
+      setDisabledButton(false)
+    } else {
+      setDisabledButton(true)
+    }
+  }, [inputValue])
 
   return (
     <section className="relative flex">
@@ -30,7 +39,8 @@ export default function SearchBar({ getUserInfos }: SearchProps) {
       />
       <button
         onClick={() => getUserInfos(inputValue)}
-        className="absolute top-1/2 translate-y-[-50%] right-[10px] py-3 px-4 bg-blue-500 rounded-lg transition-colors hover:bg-blue-800"
+        disabled={disabledButton}
+        className="absolute top-1/2 translate-y-[-50%] right-[10px] py-3 px-4 bg-blue-500 rounded-lg transition-colors enabled:hover:bg-blue-800 disabled:opacity-70"
       >
         Search
       </button>
