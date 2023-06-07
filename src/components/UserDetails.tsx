@@ -20,19 +20,19 @@ export default function UserDetails({
   company,
 }: UserProps) {
   return (
-    <section className="flex gap-7 p-12 bg-slate-100 dark:bg-blue-700 rounded-2xl shadow-lg shadow-zinc-900/10 dark:shadow-blue-600/20">
-      <div>
+    <section className="flex gap-7 p-12 bg-slate-100 dark:bg-blue-700 rounded-2xl shadow-lg shadow-zinc-900/10 dark:shadow-blue-600/20 max-sm:flex-col">
+      <div className="max-sm:flex max-sm:justify-center">
         <Image
           src={avatar_url}
           width={120}
           height={120}
           alt={`Foto de perfil do(a) ${name}`}
-          className="rounded-full"
+          className="rounded-full max-sm:w-36 max-sm:h-36"
         />
       </div>
       <div className="flex-1">
-        <div className="flex items-center justify-between">
-          <div className="max-w-[65%]">
+        <div className="flex items-center justify-between max-sm:flex-col max-sm:gap-5">
+          <div className="max-w-[65%] max-sm:text-center">
             <h1 className="text-2xl font-bold leading-9">{name}</h1>
             <span className="text-blue-500">@{login}</span>
           </div>
@@ -41,7 +41,7 @@ export default function UserDetails({
           </span>
         </div>
         <p
-          className={`mt-5 mb-8 text-sm ${
+          className={`mt-5 mb-8 text-sm max-sm:text-center ${
             bio === null
               ? 'text-blue-600 dark:text-zinc-400'
               : 'text-black dark:text-white'
@@ -49,12 +49,12 @@ export default function UserDetails({
         >
           {bio === null ? 'This profile has no bio' : bio}
         </p>
-        <div className="flex justify-between py-4 px-8 bg-slate-300 dark:bg-blue-950 rounded-lg">
+        <div className="flex justify-between py-4 px-8 bg-slate-300 dark:bg-blue-950 rounded-lg max-[450px]:flex-col max-[450px]:gap-3">
           <UserStats label="Repositories" number={public_repos} />
           <UserStats label="Followers" number={followers} />
           <UserStats label="Following" number={following} />
         </div>
-        <div className="flex justify-between mt-5">
+        <div className="flex justify-between mt-5 max-[450px]:flex-col max-[450px]:px-8 max-[450px]:gap-4">
           <div className="flex flex-col gap-4">
             <UserAdditionalInfos icon={<MapPin size={22} />} info={location} />
             <UserAdditionalInfos icon={<Link size={22} />} info={blog} />

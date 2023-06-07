@@ -28,7 +28,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="w-[750px] py-7">
+    <div className="w-[750px] py-7 max-sm:px-3 max-sm:w-full">
       <Header />
       <main className="mt-4 space-y-6">
         <SearchBar getUserInfos={getUserInfos} />
