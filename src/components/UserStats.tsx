@@ -6,7 +6,9 @@ type UserNumberProps = {
 export default function UserStats({ label, number }: UserNumberProps) {
   return (
     <div className="text-center">
-      <span className="text-sm leading-5">{label}</span>
+      <span className="text-sm text-blue-600 dark:text-white leading-5">
+        {label}
+      </span>
       <p className="text-2xl font-bold leading-8">{number}</p>
     </div>
   )

@@ -35,12 +35,12 @@ export default function SearchBar({ getUserInfos }: SearchProps) {
         placeholder="Search GitHub username..."
         onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={handleKeyDown}
-        className="w-full py-5 pl-20 pr-28 bg-blue-700 rounded-2xl placeholder:text-white focus:outline-none"
+        className="w-full py-5 pl-20 pr-28 bg-slate-100 dark:bg-blue-700 rounded-2xl shadow-lg shadow-zinc-900/10 dark:shadow-blue-600/20 placeholder:text-blue-600 dark:placeholder:text-white focus:outline-none"
       />
       <button
         onClick={() => getUserInfos(inputValue)}
         disabled={disabledButton}
-        className="absolute top-1/2 translate-y-[-50%] right-[10px] py-3 px-4 bg-blue-500 rounded-lg transition-colors enabled:hover:bg-blue-800 disabled:opacity-70"
+        className="absolute top-1/2 translate-y-[-50%] right-[10px] py-3 px-4 text-white bg-blue-500 rounded-lg transition-colors enabled:hover:bg-blue-800 disabled:opacity-70"
       >
         Search
       </button>

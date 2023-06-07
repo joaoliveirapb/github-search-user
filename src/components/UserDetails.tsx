@@ -20,7 +20,7 @@ export default function UserDetails({
   company,
 }: UserProps) {
   return (
-    <section className="flex gap-7 p-12 bg-blue-700 rounded-2xl shadow-lg shadow-blue-500/20">
+    <section className="flex gap-7 p-12 bg-slate-100 dark:bg-blue-700 rounded-2xl shadow-lg shadow-zinc-900/10 dark:shadow-blue-600/20">
       <div>
         <Image
           src={avatar_url}
@@ -36,18 +36,20 @@ export default function UserDetails({
             <h1 className="text-2xl font-bold leading-9">{name}</h1>
             <span className="text-blue-500">@{login}</span>
           </div>
-          <span className="text-sm capitalize">
+          <span className="text-sm text-blue-600 dark:text-white capitalize">
             Joined {dayjs(created_at).format('DD MMM YYYY')}
           </span>
         </div>
         <p
           className={`mt-5 mb-8 text-sm ${
-            bio === null ? 'text-zinc-400' : 'text-white'
+            bio === null
+              ? 'text-blue-600 dark:text-zinc-400'
+              : 'text-black dark:text-white'
           }`}
         >
           {bio === null ? 'This profile has no bio' : bio}
         </p>
-        <div className="flex justify-between py-4 px-8 bg-blue-950 rounded-lg">
+        <div className="flex justify-between py-4 px-8 bg-slate-300 dark:bg-blue-950 rounded-lg">
           <UserStats label="Repositories" number={public_repos} />
           <UserStats label="Followers" number={followers} />
           <UserStats label="Following" number={following} />

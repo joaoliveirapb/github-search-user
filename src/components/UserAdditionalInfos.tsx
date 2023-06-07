@@ -12,7 +12,9 @@ export default function UserAdditionalInfos({
   return (
     <p
       className={`flex items-center gap-3 text-sm ${
-        info === null || info === '' ? 'text-zinc-400' : ''
+        info === null || info === ''
+          ? 'text-zinc-400'
+          : 'text-blue-600 dark:text-white'
       }`}
     >
       {icon}
