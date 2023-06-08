@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-br">
       <body
-        className={`${spaceMono.className} flex items-center justify-center h-screen bg-slate-300 dark:bg-blue-950 dark:text-white`}
+        className={`${spaceMono.className} flex items-center justify-center min-h-screen bg-slate-300 dark:bg-blue-950 dark:text-white`}
       >
         {children}
       </body>
