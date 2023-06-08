@@ -33,7 +33,9 @@ export default function UserDetails({
       <div className="flex-1">
         <div className="flex items-center justify-between max-sm:flex-col max-sm:gap-5">
           <div className="max-w-[65%] max-sm:text-center">
-            <h1 className="text-2xl font-bold leading-9">{name}</h1>
+            <h1 className="text-2xl font-bold leading-9 max-[450px]:text-xl">
+              {name}
+            </h1>
             <span className="text-blue-500">@{login}</span>
           </div>
           <span className="text-sm text-blue-600 dark:text-white capitalize">
@@ -54,7 +56,7 @@ export default function UserDetails({
           <UserStats label="Followers" number={followers} />
           <UserStats label="Following" number={following} />
         </div>
-        <div className="flex justify-between mt-5 max-[450px]:flex-col max-[450px]:px-8 max-[450px]:gap-4">
+        <div className="flex justify-between mt-5 max-[450px]:flex-col max-[450px]:gap-4">
           <div className="flex flex-col gap-4">
             <UserAdditionalInfos icon={<MapPin size={22} />} info={location} />
             <UserAdditionalInfos icon={<Link size={22} />} info={blog} />
