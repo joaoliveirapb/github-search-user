@@ -12,7 +12,6 @@ export default function SkeletonLoader() {
     } else {
       setIsDarkTheme(false)
     }
-    console.log(isDarkTheme)
   }, [isDarkTheme])
 
   return (
