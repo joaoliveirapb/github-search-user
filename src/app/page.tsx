@@ -25,7 +25,9 @@ export default function Home() {
   }
 
   useEffect(() => {
-    getUserInfos('octocat')
+    setTimeout(() => {
+      getUserInfos('octocat')
+    }, 2000)
   }, [])
 
   return (
