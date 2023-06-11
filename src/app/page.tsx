@@ -7,6 +7,7 @@ import Header from '@/components/Header'
 import SearchBar from '@/components/SearchBar'
 import UserDetails from '@/components/UserDetails'
 import Error from '@/components/Error'
+import SkeletonLoader from '@/components/SkeletonLoader'
 
 export default function Home() {
   const [user, setUser] = useState<UserProps | null>(null)
@@ -33,7 +34,7 @@ export default function Home() {
       <main className="mt-4 space-y-6">
         <SearchBar getUserInfos={getUserInfos} />
         {error && <Error />}
-        {user && <UserDetails {...user} />}
+        {user ? <UserDetails {...user} /> : <SkeletonLoader />}
       </main>
     </div>
   )
